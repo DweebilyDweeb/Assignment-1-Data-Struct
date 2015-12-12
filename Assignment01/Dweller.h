@@ -15,14 +15,16 @@ public:
     const int getCurrentHealth();
     const int getCurrentRadDamage();
     const int getAttackDmg();
-    void setPosition(const Vec2D&);
+    void setPosition(const Vec2D& position);
     const Vec2D getPosition();
-    void receiveHealthDamage(const int&);
-    void receiveRadDamage(const int&);
-    void receiveEquipmentDamage(const int&);
-    void addStimpak(const int&);
+    void receiveHealthDamage(const int& health);
+    void receiveRadDamage(const int& radiation);
+    void receiveEquipmentDamage(const int& eqdmg);
+    void addStimpak(const int& medkit);
+    void addRadAway(const int& radkit);
+    void useStimpak();
     void useRadAway();
-    Outfit* assignOutfit(Outfit*);
+    Outfit* assignOutfit(Outfit* outfit);
     Weapon* assignWeapon(Weapon*);
     bool isDead();
 
