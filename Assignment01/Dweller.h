@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _DWELLER_H
+#define _DWELLER_H
 #include "GameObject.h"
 #include "Vec2D.h"
 #include "Outfit.h"
@@ -24,7 +25,7 @@ public:
     void addRadAway(const int& radkit);
     void useStimpak();
     void useRadAway();
-    Outfit* assignOutfit(Outfit* outfit);
+    Outfit* assignOutfit(Outfit*);
     Weapon* assignWeapon(Weapon*);
     bool isDead();
 
@@ -39,3 +40,4 @@ private:
     Weapon* weapon_;
 };
 
+#endif

@@ -16,6 +16,12 @@ const int Outfit::getSPECIAL()
 
 }
 
+const int Outfit::getDurability()
+{
+    return durability_;
+    
+}
+
 void Outfit::receiveDamage(const int& Damage)
 {
     durability_ -= Damage;

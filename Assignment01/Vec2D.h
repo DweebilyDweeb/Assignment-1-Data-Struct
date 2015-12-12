@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _VEC2D_H
+#define _VEC2D_H
 class Vec2D
 {
 public:
@@ -9,3 +10,4 @@ public:
     double y;
 };
 
+#endif

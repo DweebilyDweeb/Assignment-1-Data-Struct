@@ -16,6 +16,12 @@ const int Weapon::getAttackDmg()
     
 }
 
+const int Weapon::getDurability()
+{
+    return durability_;
+
+}
+
 void Weapon::receiveDamage(const int& Damage)
 {
     durability_ -= Damage / 2;

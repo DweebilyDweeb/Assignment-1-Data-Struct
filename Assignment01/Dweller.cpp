@@ -12,7 +12,23 @@ Dweller::~Dweller()
 
 const int Dweller::getSPECIAL()
 {
-    return SPECIAL_;
+    if (outfit_ == 0)
+        return SPECIAL_;
+
+    else
+    {
+        int c = 0;
+        for (int a = 10, b = 1; a < 10000001, b < 1000001; a *= 10, b *= 10)
+        {
+            if ((SPECIAL_  % a / b) + (outfit_->getSPECIAL() % a / b) > 9)
+
+                c += 9 * b;
+            else
+                c += ((SPECIAL_  % a / b) + (outfit_->getSPECIAL() % a / b))*b;
+            
+        }
+        return c;
+    }
 }
 
 const int Dweller::getCurrentHealth()
@@ -96,7 +112,7 @@ Outfit* Dweller::assignOutfit(Outfit* outfit)
     if (isDead() == false)
     {
         delete outfit_;
-        outfit_ = new Outfit(outfit->getName, outfit->getDurability, outfit->getSPECIAL);
+        outfit_ = new Outfit(outfit->getName(), outfit->getDurability(), outfit->getSPECIAL());
         return outfit_;
     }
     if (isDead() == true)
@@ -107,7 +123,7 @@ Weapon* Dweller::assignWeapon(Weapon* weapon)
 {
     if (isDead() == false)
         delete weapon_;
-    weapon_ = new Weapon(weapon->getName, weapon->getDurability, weapon->getAttackDmg);
+    weapon_ = new Weapon(weapon->getName(), weapon->getDurability(), weapon->getAttackDmg());
     if (isDead() == true)
         return weapon_;
 }
